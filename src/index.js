@@ -26,7 +26,7 @@ function component() {
                     </div>
                     <div><i class="fas fa-ellipsis-v"></i></i></div>`;
     li.classList.add('tasks_li');
-    container.appendChild(li); 
+    container.appendChild(li);
   }
 }
 component();
