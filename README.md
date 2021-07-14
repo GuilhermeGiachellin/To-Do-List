@@ -7,9 +7,8 @@
 ## Image Preview
 ![image](https://user-images.githubusercontent.com/81584449/125695914-8999bca3-2cc6-49bc-97d3-04b5d95bb285.png)
 
-
-##  Live Demo
-- [Demo](https://guilhermegiachellin.github.io/To-Do-List/)
+<!-- //##  Live Demo
+[Demo](https://guilhermegiachellin.github.io/To-Do-List/)-->
 
 ## What was built in this project:
 
