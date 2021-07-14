@@ -5,9 +5,9 @@
 > "To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
 
 ## Image Preview
-![Screenshot Main Page](assets/images/preview3.jpg)
 
-## :star::star: [Live Demo](https://mrigorir.github.io/awesome_books/) :star::star:
+
+##  Live Demo
 
 
 ## What was built in this project:
@@ -68,4 +68,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT]() licensed.
+This project is [MIT](https://github.com/GuilhermeGiachellin/To-Do-List/blob/main/LICENSE) licensed.
