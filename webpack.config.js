@@ -8,6 +8,9 @@ module.exports = {
     filename: 'index.bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+  }, 
+  devServer: {
+    contentBase: './dist',
   },
   plugins: [
     new HtmlWebpackPlugin({
