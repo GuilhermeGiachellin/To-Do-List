@@ -5,10 +5,10 @@
 > "To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
 
 ## Image Preview
+![image](https://user-images.githubusercontent.com/81584449/125695914-8999bca3-2cc6-49bc-97d3-04b5d95bb285.png)
 
-
-##  Live Demo
-
+<!-- //##  Live Demo
+[Demo](https://guilhermegiachellin.github.io/To-Do-List/)-->
 
 ## What was built in this project:
 
@@ -42,6 +42,12 @@
 - Eslint
 
 - Stylelint
+
+### Usage
+
+- Clone the repo.
+
+- Open the terminal in your machine and type `npm start` to start the local server.
 
 ## Author
 
