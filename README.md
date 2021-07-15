@@ -43,6 +43,12 @@
 
 - Stylelint
 
+### Usage
+
+- Clone the repo.
+
+- Open the terminal in your machine and type `npm start` to start the local server.
+
 ## Author
 
 👤 **Guilherme Giachellin**
