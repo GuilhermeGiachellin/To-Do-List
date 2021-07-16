@@ -38,6 +38,7 @@ section {
   height: 50px;
   width: 35vw;
   border-bottom: 0.5px solid #d4d4d4;
+  cursor: move;
 }
 
 .tasks_li > div {
@@ -53,11 +54,19 @@ section {
 .add_input {
   height: 50px;
   border: 0.5px solid #d4d4d4;
+  padding-left: 1vw;
+}
+
+#three_dots {
+  cursor: move;
 }
 
 ::placeholder {
   font-style: italic;
   font-size: 1em;
-  color: #d4d4d4;
-  padding-left: 1vw;
+  color: #d4d4d4;  
+}
+
+.draggable.dragging {
+  opacity: 0.5;
 }

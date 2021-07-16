@@ -1,32 +1,10 @@
+//import  drag  from './drag';
 import './style.css';
+import {input, storage, drag} from './taskWrk.js';
+//import component from './displayHtml.js';
+storage();
+input();
 
-const container = document.getElementById('container_ul');
+document.addEventListener('DOMContentLoaded', drag);
 
-const list = [{
-  description: 'wash the dishes',
-  completed: false,
-  index: 1,
-}, {
-  description: 'buy milk',
-  completed: false,
-  index: 2,
-}, {
-  description: 'clean the floor',
-  completed: false,
-  index: 3,
-},
-];
 
-function component() {
-  for (let i = 0; i < list.length; i += 1) {
-    const li = document.createElement('li');
-    li.innerHTML = `<div>
-                    <input type="checkbox" id="task" name="tasks">
-                    <label for="tasks">${list[i].description}</label>
-                    </div>
-                    <div><i class="fas fa-ellipsis-v"></i></i></div>`;
-    li.classList.add('tasks_li');
-    container.appendChild(li);
-  }
-}
-component();
