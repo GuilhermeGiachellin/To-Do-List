@@ -27,6 +27,21 @@ export const input = () => {
   });
 };
 
+export const changeContent = () => {
+  const content = document.querySelectorAll('#label');
+  content.forEach((e) => {
+    e.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        const newDescription = e.target.innerText;
+        e.preventDefault();
+        tasks[e.target.parentNode.parentNode.id].description = newDescription;
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+        component();
+      }
+    });
+  });
+};
+
 export const storage = () => {
   const tasksOnStorage = JSON.parse(localStorage.getItem('tasks'));
   if (tasksOnStorage == null) {

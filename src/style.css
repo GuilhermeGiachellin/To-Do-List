@@ -78,3 +78,12 @@ section {
 .over {
   background-color: rgb(75, 75, 250);
 }
+
+#label {
+  padding: 0.5vw;
+  width: 15vw;
+}
+
+#trash {
+  margin-right: 0.7vw;
+}
