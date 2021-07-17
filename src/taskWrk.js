@@ -1,16 +1,11 @@
-
+/* eslint-disable import/no-cycle */
+/* eslint-disable  import/no-mutable-exports */
 import component from './displayHtml.js';
-import drag  from './drag.js';
 
-
-const checkbox = document.querySelector('.task_check');
-const check_label = document.getElementById('label');
 export let tasks = [];
 
-console.log('classes tasks:')
-
 class ToDo {
-  constructor(index = 0, description, complete = false) {
+  constructor(index, description, complete = false) {
     this.index = index;
     this.description = description;
     this.complete = complete;
@@ -27,25 +22,17 @@ export const input = () => {
       tasks.push(taskObj);
       localStorage.setItem('tasks', JSON.stringify(tasks));
       component();
+      taskInput.value = '';
     }
   });
-}
+};
 
 export const storage = () => {
   const tasksOnStorage = JSON.parse(localStorage.getItem('tasks'));
-  console.log(tasksOnStorage)
   if (tasksOnStorage == null) {
     localStorage.setItem('tasks', JSON.stringify([]));
   } else {
     tasks = tasksOnStorage;
     component();
   }
-}
-
-/*checkbox.addEventListener('change', (e) => {
-    e.preventDefault();
-    check_label.style = 'color: grey; text-decoration-line: line-through;'
-});*/
-
-
-
+};

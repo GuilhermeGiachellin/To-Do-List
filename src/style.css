@@ -64,9 +64,17 @@ section {
 ::placeholder {
   font-style: italic;
   font-size: 1em;
-  color: #d4d4d4;  
+  color: #d4d4d4;
 }
 
-.draggable.dragging {
-  opacity: 0.5;
+.check_true {
+  text-decoration: black line-through;
+}
+
+.dragging {
+  background-color: #a1a1a1;
+}
+
+.over {
+  background-color: rgb(75, 75, 250);
 }
