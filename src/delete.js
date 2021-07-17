@@ -16,14 +16,12 @@ const deleteTrash = () => {
   const trash = document.querySelectorAll('#trash');
   trash.forEach((e) => {
     e.addEventListener('click', () => {
-      const index = e.parentNode.parentNode.id;
-      if (tasks[index].complete === true) {
+      const index = e.parentNode.parentNode.id;      
         e.parentNode.parentNode.remove();
         tasks.splice(index, 1);
         localStorage.setItem('tasks', JSON.stringify(tasks));
         component();
-        window.location.reload();
-      }
+        window.location.reload();      
     });
   });
 };
