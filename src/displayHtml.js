@@ -2,9 +2,10 @@ import {tasks} from './taskWrk';
 
 function component() {
   const container = document.getElementById('container_ul');
-  container.innerHTML = '';  
-  for (let i = 0; i < tasks.length; i += 1) {    
-    const li = document.createElement('li');    
+  container.innerHTML = '';
+  console.log(tasks)
+  for (let i = 0; i < tasks.length; i += 1) {
+    const li = document.createElement('li');
     li.innerHTML = `<div>
                       <input type="checkbox" class="task_check" name="tasks">
                       <label for="tasks" id="label">${tasks[i].description}</label>
@@ -14,6 +15,7 @@ function component() {
     li.setAttribute('id', `${tasks[i].index}`)
     li.setAttribute('draggable', 'true');
     container.appendChild(li);    
-  }  
+  }
 }
+
 export default component;

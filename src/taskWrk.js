@@ -1,6 +1,6 @@
 
 import component from './displayHtml.js';
-//import { drag } from './drag.js';
+import drag  from './drag.js';
 
 
 const checkbox = document.querySelector('.task_check');
@@ -41,35 +41,6 @@ export const storage = () => {
     component();
   }
 }
-
-let startPos, currentPos = 0;
-const draggables = document.querySelectorAll('.tasks_li')
-console.log(draggables);
-export const drag = () => {
- 
-  draggables.forEach((e) => {
-    e.addEventListener('dragstart', (j) => {
-      e.classList.add('dragging');
-      console.log("START")
-      startPos = parseInt(e.id, 10);
-    })
-    e.addEventListener('dragleave', (j) => {
-      e.classList.remove('over');
-    })
-    e.addEventListener('dragover', (j) => {
-      j.preventDefault();
-      currentPos = parseInt(e.id, 10);
-      e.classList.add('over');
-    })
-    e.addEventListener('dragend', (j) => {
-      e.classList.remove('dragging');
-
-      tasks[startPos].index = currentPos;
-      tasks[currentPos].index = startPos;
-    })
-  })
-}
-
 
 /*checkbox.addEventListener('change', (e) => {
     e.preventDefault();
