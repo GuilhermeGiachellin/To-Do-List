@@ -38,6 +38,7 @@ section {
   height: 50px;
   width: 35vw;
   border-bottom: 0.5px solid #d4d4d4;
+  cursor: move;
 }
 
 .tasks_li > div {
@@ -53,11 +54,27 @@ section {
 .add_input {
   height: 50px;
   border: 0.5px solid #d4d4d4;
+  padding-left: 1vw;
+}
+
+#three_dots {
+  cursor: move;
 }
 
 ::placeholder {
   font-style: italic;
   font-size: 1em;
   color: #d4d4d4;
-  padding-left: 1vw;
+}
+
+.check_true {
+  text-decoration: black line-through;
+}
+
+.dragging {
+  background-color: #a1a1a1;
+}
+
+.over {
+  background-color: rgb(75, 75, 250);
 }
