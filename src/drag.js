@@ -27,11 +27,9 @@ const drag = () => {
       if (startPos !== currentPos) {
         const holder = tasks[startPos].description;
         const holderCheck = tasks[startPos].complete;
-        tasks[startPos].index = currentPos;
         tasks[startPos].description = tasks[currentPos].description;
         tasks[startPos].complete = tasks[currentPos].complete;
         tasks[currentPos].complete = holderCheck;
-        tasks[currentPos].index = startPos;
         tasks[currentPos].description = holder;
         localStorage.setItem('tasks', JSON.stringify(tasks));
         component();

@@ -17,6 +17,7 @@ const checkVal = () => {
         localStorage.setItem('tasks', JSON.stringify(tasks));
         component();
       }
+      window.location.reload();
     });
   });
 };
