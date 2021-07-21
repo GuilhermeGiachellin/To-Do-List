@@ -4,6 +4,7 @@ import checkVal from './completed.js';
 import drag from './drag.js';
 import { tasks } from './taskWrk.js';
 
+//add
 function component() {
   const container = document.getElementById('container_ul');
   container.innerHTML = '';

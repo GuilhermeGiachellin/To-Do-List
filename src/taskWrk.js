@@ -12,6 +12,7 @@ class ToDo {
   }
 }
 
+//add
 const taskInput = document.getElementById('add_input');
 export const input = () => {
   taskInput.addEventListener('keypress', (e) => {
