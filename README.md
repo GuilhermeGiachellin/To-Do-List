@@ -47,7 +47,11 @@
 
 - Clone the repo.
 
-- Open the terminal in your machine and type `npm start` to start the local server.
+- Run `npm install` on your terminal.
+
+- Open the terminal in your machine and run `npm start` to start the local server.
+
+- Open the terminal in your machine and run `npm run test` in the terminal to run the test via Jest.
 
 ## Author
 
