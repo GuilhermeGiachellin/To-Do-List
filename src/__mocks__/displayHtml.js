@@ -29,11 +29,10 @@ function component() {
       li.classList.add('tasks_li');
       li.setAttribute('id', `${tasks[i].index}`);
       li.setAttribute('draggable', 'true');
-      container.appendChild(li);  
-
+      container.appendChild(li);        
     }
   }
-  
+  localStorage.setItem('tasks', JSON.stringify(tasks));  
 }
 
 export default component;

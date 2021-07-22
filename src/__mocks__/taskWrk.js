@@ -14,10 +14,11 @@ class ToDo {
 export const input = () => {  
   let taskObj = new ToDo(1, 'Test', false);
   tasks.push(taskObj);
-  let taskObj2 = new ToDo(2, 'Test2', true);
-  tasks.push(taskObj2);   
-  
-  
+  taskObj = new ToDo(2, 'Test2', true);
+  tasks.push(taskObj);  
+  taskObj = new ToDo(2, 'Test3', true);
+  tasks.push(taskObj);  
+  localStorage.setItem('tasks', JSON.stringify(tasks)); 
 }
 
 export const changeContent = () => {
