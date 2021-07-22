@@ -20,8 +20,7 @@ const deleteTrash = () => {
       e.parentNode.parentNode.remove();
       tasks.splice(index, 1);
       localStorage.setItem('tasks', JSON.stringify(tasks));
-      component();
-      window.location.reload();
+      component();      
     });
   });
 };
