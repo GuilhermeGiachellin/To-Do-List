@@ -1,8 +1,9 @@
-/* eslint-disable import/no-cycle */
-/* eslint-disable  import/no-mutable-exports */
-import component from './displayHtml.js';
+/* eslint-disable */
 
+import component from './displayHtml.js';
 export let tasks = [];
+
+/* eslint-enable */
 
 class ToDo {
   constructor(index, description, complete = false) {
@@ -13,19 +14,14 @@ class ToDo {
 }
 
 // add
-const taskInput = document.getElementById('add_input');
 export const input = () => {
-  taskInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      let index = tasks.length - 1;
-      index += 1;
-      const taskObj = new ToDo(index, taskInput.value, false);
-      tasks.push(taskObj);
-      localStorage.setItem('tasks', JSON.stringify(tasks));
-      component();
-      taskInput.value = '';
-    }
-  });
+  let taskObj = new ToDo(1, 'Test', false);
+  tasks.push(taskObj);
+  taskObj = new ToDo(2, 'Test2', true);
+  tasks.push(taskObj);
+  taskObj = new ToDo(2, 'Test3', true);
+  tasks.push(taskObj);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
 export const changeContent = () => {
