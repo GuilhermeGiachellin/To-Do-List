@@ -17,7 +17,7 @@ class ToDo {
 export const input = () => {
   let taskObj = new ToDo(1, 'Test', false);
   tasks.push(taskObj);
-  taskObj = new ToDo(2, 'Test2', true);
+  taskObj = new ToDo(2, 'Test2', false);
   tasks.push(taskObj);
   taskObj = new ToDo(2, 'Test3', true);
   tasks.push(taskObj);

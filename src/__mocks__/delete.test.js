@@ -1,0 +1,92 @@
+/**
+ * @jest-environment jsdom
+ */
+
+import checkVal from './completed.js';
+import { deleteTask } from './delete.js';
+import component from './displayHtml.js';
+import { input, tasks } from './taskWrk.js';
+import drag from './drag.js';
+
+// CLEAR ALL COMPLETED TEST
+describe('Add objects and DOM to test delete', () => {
+  test('Create DOM', () => {
+    document.body.innerHTML = `<ul id="container_ul"></ul>
+                                    <button id="button" class="button" id="delete_btn">Clear all completed</button>`;
+    component();
+    expect(tasks.length).toBeGreaterThanOrEqual(0);
+  });
+});
+
+describe('Testing completed tasks', () => {
+  test('Completed tasks delete', () => {
+    input();
+    const clearBtn = document.getElementById('button');
+    deleteTask();
+    clearBtn.click();
+    const tasksOnStorage = JSON.parse(localStorage.getItem('tasks'));
+    expect(tasks).toHaveLength(tasksOnStorage.length);
+  });
+});
+
+// CHECKBOX TEST
+describe('Add objects and DOM to test changing values', () => {
+  test('Create DOM', () => {
+    document.body.innerHTML = `<ul id="container_ul"></ul>
+                                    <button id="button" class="button" id="delete_btn">Clear all completed</button>`;
+    component();
+    expect(tasks.length).toBeGreaterThanOrEqual(0);
+  });
+});
+
+describe('Changing value true or false of tasks', () => {
+  test('Changing position 0 FALSE to TRUE', () => {
+    const check = document.querySelector("li[id = '0'] > div > input");
+    checkVal();
+    check.click();
+    expect(tasks.length).toBe(2)
+    expect(tasks[0].complete).toBe(true);
+  });
+
+  test('Changing position 0 TRUE to FALSE', () => {
+    const check = document.querySelector("li[id = '0'] > div > input");
+    checkVal();
+    check.click();
+    expect(tasks.length).toBe(2)
+    expect(tasks[0].complete).toBe(false);
+  });
+
+  test('Changing position 1 FALSE to TRUE', () => {
+    const check = document.querySelector("li[id = '1'] > div > input");
+    checkVal();
+    check.click();
+    expect(tasks.length).toBe(2)
+    expect(tasks[1].complete).toBe(true);
+  });
+
+  test('Changing position 1 TRUE to FALSE', () => {
+    const check = document.querySelector("li[id = '1'] > div > input");
+    checkVal();
+    check.click();
+    expect(tasks.length).toBe(2)
+    expect(tasks[1].complete).toBe(false);
+  });
+});
+
+// DRAG TEST
+describe('Drag functionalities test', () => {
+    test('Changing position 0 and 1', () => {
+
+        const draggables = document.querySelectorAll('container_ul').childNodes;
+        const tasksOnStorage = JSON.parse(localStorage.getItem('tasks'));
+        console.log(draggables)
+        // drag();
+    })
+});
+
+// CHANGE DESCRIPTION TEST
+describe('Change description test', () => {
+    test('Changing position 0 text to TestChange', () => {
+        
+    })
+});
