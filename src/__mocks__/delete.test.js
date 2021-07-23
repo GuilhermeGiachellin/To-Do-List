@@ -5,7 +5,7 @@
 import checkVal from './completed.js';
 import { deleteTask } from './delete.js';
 import component from './displayHtml.js';
-import { input, tasks } from './taskWrk.js';
+import { changeContent, input, tasks } from './taskWrk.js';
 import drag from './drag.js';
 
 // CLEAR ALL COMPLETED TEST
@@ -79,16 +79,16 @@ describe('Drag functionalities test', () => {
     test('Create DOM', () => {
       document.body.innerHTML = `<ul id="container_ul"></ul>
                                           <button id="button" class="button" id="delete_btn">Clear all completed</button>`;
-      component();      
+      component();
       expect(tasks.length).toBeGreaterThanOrEqual(0);
     });
   });
 
   test('Changing position 0 and 1', () => {
     const draggablesStart = document.querySelector("#container_ul > li[id='0']");
-    const draggableDrop = document.querySelector("#container_ul > li[id='1']");    
-    drag(draggablesStart.id, draggableDrop.id);      
-    const tasksOnStorage = JSON.parse(localStorage.getItem('tasks'));    
+    const draggableDrop = document.querySelector("#container_ul > li[id='1']");
+    drag(draggablesStart.id, draggableDrop.id);
+    const tasksOnStorage = JSON.parse(localStorage.getItem('tasks'));
     expect(tasksOnStorage[0].description).toBe('Test2');
   });
 });
@@ -96,6 +96,16 @@ describe('Drag functionalities test', () => {
 // CHANGE DESCRIPTION TEST
 describe('Change description test', () => {
   test('Changing position 0 text to TestChange', () => {
+    const newDescription = 'TestChange';
+    const index = 0;
+    changeContent(newDescription, index);
+    expect(tasks[0].description).toBe('TestChange');
+  });
 
+  test('Changing position 0 text to TestChange', () => {
+    const newDescription = 'TestChangeAgain';
+    const index = 0;
+    changeContent(newDescription, index);
+    expect(tasks[0].description).toBe('TestChangeAgain');
   });
 });

@@ -1,4 +1,4 @@
-// eslint-disable 
+// eslint-disable
 import component from './displayHtml.js';
 import { tasks } from './taskWrk.js';
 // eslint-enable
@@ -15,21 +15,18 @@ const drag = (startPos, currentPos) => {
       j.preventDefault();
       currentPos = parseInt(e.id, 10);
       e.classList.add('over');
-    });    
-      e.classList.remove('dragging');     
-      console.log(tasks) 
-      if (startPos !== currentPos) {
-        const holder = tasks[startPos].description;
-        const holderCheck = tasks[startPos].complete;
-        tasks[startPos].description = tasks[currentPos].description;
-        tasks[startPos].complete = tasks[currentPos].complete;
-        tasks[currentPos].complete = holderCheck;
-        tasks[currentPos].description = holder;        
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-        const tasksOnStorage = JSON.parse(localStorage.getItem('tasks'));
-        console.log(tasksOnStorage)
-        component();
-      }    
+    });
+    e.classList.remove('dragging');
+    if (startPos !== currentPos) {
+      const holder = tasks[startPos].description;
+      const holderCheck = tasks[startPos].complete;
+      tasks[startPos].description = tasks[currentPos].description;
+      tasks[startPos].complete = tasks[currentPos].complete;
+      tasks[currentPos].complete = holderCheck;
+      tasks[currentPos].description = holder;
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+      component();
+    }
   });
 };
 export default drag;

@@ -24,19 +24,10 @@ export const input = () => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-export const changeContent = () => {
-  const content = document.querySelectorAll('#label');
-  content.forEach((e) => {
-    e.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        const newDescription = e.target.innerText;
-        e.preventDefault();
-        tasks[e.target.parentNode.parentNode.id].description = newDescription;
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-        component();
-      }
-    });
-  });
+export const changeContent = (newDescription, index) => {
+  tasks[index].description = newDescription;
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  component();
 };
 
 export const storage = () => {
