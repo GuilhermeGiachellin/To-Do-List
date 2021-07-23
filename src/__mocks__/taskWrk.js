@@ -17,26 +17,17 @@ class ToDo {
 export const input = () => {
   let taskObj = new ToDo(1, 'Test', false);
   tasks.push(taskObj);
-  taskObj = new ToDo(2, 'Test2', true);
+  taskObj = new ToDo(2, 'Test2', false);
   tasks.push(taskObj);
   taskObj = new ToDo(2, 'Test3', true);
   tasks.push(taskObj);
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-export const changeContent = () => {
-  const content = document.querySelectorAll('#label');
-  content.forEach((e) => {
-    e.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        const newDescription = e.target.innerText;
-        e.preventDefault();
-        tasks[e.target.parentNode.parentNode.id].description = newDescription;
-        localStorage.setItem('tasks', JSON.stringify(tasks));
-        component();
-      }
-    });
-  });
+export const changeContent = (newDescription, index) => {
+  tasks[index].description = newDescription;
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  component();
 };
 
 export const storage = () => {

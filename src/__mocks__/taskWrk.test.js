@@ -13,7 +13,8 @@ describe('Add task functionalities', () => {
   });
 
   test('Create DOM', () => {
-    document.body.innerHTML = '<ul id="container_ul"></ul>';
+    document.body.innerHTML = `<ul id="container_ul"></ul>
+    <button id="button" class="button" id="delete_btn">Clear all completed</button>`;
     component();
     expect(tasks.length).toBeGreaterThanOrEqual(0);
   });
