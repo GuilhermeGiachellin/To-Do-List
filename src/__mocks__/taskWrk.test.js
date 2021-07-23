@@ -20,3 +20,12 @@ describe('Add task functionalities', () => {
     })  
 })
 
+describe('Delete functions', () => {
+    test('Delete test', () => {
+        deleteTrash();
+        const trash = document.querySelector("li[id='1'] > div > i");
+        trash.click();
+        const list = document.querySelectorAll('#container_ul li');         
+        expect(tasks).toHaveLength(1);
+    }) 
+})
