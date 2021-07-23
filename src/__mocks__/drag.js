@@ -4,11 +4,13 @@ import component from './displayHtml.js';
 import { tasks } from './taskWrk.js';
 
 let startPos; let
-  currentPos = 0;
-//const draggables = document.querySelector('#container_ul').childNodes;
+  currentPos = 0;  
+
 
 const drag = () => {
-  draggables.forEach((e) => {
+  // const draggables = document.querySelector('#container_ul > li');
+  // console.log(draggables)
+  document.querySelectorAll('#container_ul > li').forEach((e) => {
     e.addEventListener('dragstart', () => {
       e.classList.add('dragging');
       startPos = parseInt(e.id, 10);

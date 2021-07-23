@@ -44,7 +44,7 @@ describe('Changing value true or false of tasks', () => {
     const check = document.querySelector("li[id = '0'] > div > input");
     checkVal();
     check.click();
-    expect(tasks.length).toBe(2)
+    expect(tasks.length).toBe(2);
     expect(tasks[0].complete).toBe(true);
   });
 
@@ -52,7 +52,7 @@ describe('Changing value true or false of tasks', () => {
     const check = document.querySelector("li[id = '0'] > div > input");
     checkVal();
     check.click();
-    expect(tasks.length).toBe(2)
+    expect(tasks.length).toBe(2);
     expect(tasks[0].complete).toBe(false);
   });
 
@@ -60,7 +60,7 @@ describe('Changing value true or false of tasks', () => {
     const check = document.querySelector("li[id = '1'] > div > input");
     checkVal();
     check.click();
-    expect(tasks.length).toBe(2)
+    expect(tasks.length).toBe(2);
     expect(tasks[1].complete).toBe(true);
   });
 
@@ -68,25 +68,36 @@ describe('Changing value true or false of tasks', () => {
     const check = document.querySelector("li[id = '1'] > div > input");
     checkVal();
     check.click();
-    expect(tasks.length).toBe(2)
+    expect(tasks.length).toBe(2);
     expect(tasks[1].complete).toBe(false);
   });
 });
 
 // DRAG TEST
 describe('Drag functionalities test', () => {
-    test('Changing position 0 and 1', () => {
+  describe('Add objects and DOM to test changing values', () => {
+    test('Create DOM', () => {
+      document.body.innerHTML = `<ul id="container_ul"></ul>
+                                          <button id="button" class="button" id="delete_btn">Clear all completed</button>`;
+      component();      
+      expect(tasks.length).toBeGreaterThanOrEqual(0);
+    });
+  });
 
-        const draggables = document.querySelectorAll('container_ul').childNodes;
-        const tasksOnStorage = JSON.parse(localStorage.getItem('tasks'));
-        console.log(draggables)
-        // drag();
-    })
+  test('Changing position 0 and 1', () => {
+    const draggablesStart = document.querySelectorAll("#container_ul > li[id='0']");
+    const draggableDrop = document.querySelectorAll("#container_ul > li[id='1']");
+    const tasksOnStorage = JSON.parse(localStorage.getItem('tasks'));
+    drag(); 
+    // draggablesStart.click();   
+    console.log(draggablesStart.length);
+    expect(tasks[0].description).toBe('Test');
+  });
 });
 
 // CHANGE DESCRIPTION TEST
 describe('Change description test', () => {
-    test('Changing position 0 text to TestChange', () => {
-        
-    })
+  test('Changing position 0 text to TestChange', () => {
+
+  });
 });
