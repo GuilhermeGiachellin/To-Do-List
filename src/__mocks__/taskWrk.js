@@ -1,6 +1,9 @@
- import component from './displayHtml.js';
+/* eslint-disable */
 
+import component from './displayHtml.js';
 export let tasks = [];
+
+/* eslint-enable */
 
 class ToDo {
   constructor(index, description, complete = false) {
@@ -10,16 +13,16 @@ class ToDo {
   }
 }
 
-//add
-export const input = () => {  
+// add
+export const input = () => {
   let taskObj = new ToDo(1, 'Test', false);
   tasks.push(taskObj);
   taskObj = new ToDo(2, 'Test2', true);
-  tasks.push(taskObj);  
+  tasks.push(taskObj);
   taskObj = new ToDo(2, 'Test3', true);
-  tasks.push(taskObj);  
-  localStorage.setItem('tasks', JSON.stringify(tasks)); 
-}
+  tasks.push(taskObj);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+};
 
 export const changeContent = () => {
   const content = document.querySelectorAll('#label');
