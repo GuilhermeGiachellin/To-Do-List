@@ -1,16 +1,9 @@
-/* eslint-disable import/no-cycle */
-
+// eslint-disable 
 import component from './displayHtml.js';
 import { tasks } from './taskWrk.js';
-
-let startPos; let
-  currentPos = 0;  
-
-
-const drag = () => {
-  // const draggables = document.querySelector('#container_ul > li');
-  // console.log(draggables)
-  document.querySelectorAll('#container_ul > li').forEach((e) => {
+// eslint-enable
+const drag = (startPos, currentPos) => {
+  document.querySelectorAll('#container_ul').forEach((e) => {
     e.addEventListener('dragstart', () => {
       e.classList.add('dragging');
       startPos = parseInt(e.id, 10);
@@ -22,22 +15,21 @@ const drag = () => {
       j.preventDefault();
       currentPos = parseInt(e.id, 10);
       e.classList.add('over');
-    });
-    e.addEventListener('dragend', () => {
-      e.classList.remove('dragging');
-
+    });    
+      e.classList.remove('dragging');     
+      console.log(tasks) 
       if (startPos !== currentPos) {
         const holder = tasks[startPos].description;
         const holderCheck = tasks[startPos].complete;
         tasks[startPos].description = tasks[currentPos].description;
         tasks[startPos].complete = tasks[currentPos].complete;
         tasks[currentPos].complete = holderCheck;
-        tasks[currentPos].description = holder;
+        tasks[currentPos].description = holder;        
         localStorage.setItem('tasks', JSON.stringify(tasks));
+        const tasksOnStorage = JSON.parse(localStorage.getItem('tasks'));
+        console.log(tasksOnStorage)
         component();
-      }
-    });
+      }    
   });
 };
-
 export default drag;

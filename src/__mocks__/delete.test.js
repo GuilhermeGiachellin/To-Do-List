@@ -85,13 +85,11 @@ describe('Drag functionalities test', () => {
   });
 
   test('Changing position 0 and 1', () => {
-    const draggablesStart = document.querySelectorAll("#container_ul > li[id='0']");
-    const draggableDrop = document.querySelectorAll("#container_ul > li[id='1']");
-    const tasksOnStorage = JSON.parse(localStorage.getItem('tasks'));
-    drag(); 
-    // draggablesStart.click();   
-    console.log(draggablesStart.length);
-    expect(tasks[0].description).toBe('Test');
+    const draggablesStart = document.querySelector("#container_ul > li[id='0']");
+    const draggableDrop = document.querySelector("#container_ul > li[id='1']");    
+    drag(draggablesStart.id, draggableDrop.id);      
+    const tasksOnStorage = JSON.parse(localStorage.getItem('tasks'));    
+    expect(tasksOnStorage[0].description).toBe('Test2');
   });
 });
 
